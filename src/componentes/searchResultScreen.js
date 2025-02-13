@@ -20,7 +20,7 @@ function SearchCat() {
         if (!jwToken) {
             navigate("/")
         } else {
-            setIsLoading(true)
+            setIsLoading(false)
         }
     }, [navigate])
 
@@ -66,8 +66,6 @@ function SearchCat() {
                 <Button type="submit" style={{ padding: "10px 15px", backgroundColor: "blue", color: "#fff", border: "none", borderRadius: "5px", cursor: "pointer" }}>---</Button>
                 <Button onClick={escape} style={{ margin:"10px", padding: "10px 15px", backgroundColor: "red", color: "#fff", border: "none", borderRadius: "5px", cursor: "pointer" }}>Escape</Button>
             </Form>
-
-            {/* Renderiza o componente Results se catData estiver disponível */}
             {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
             {rhymeList && <Resultados rhymeList={rhymeList} error={error} />}
             </div>
