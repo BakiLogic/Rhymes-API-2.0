@@ -20,7 +20,7 @@ function SearchCat() {
         if (!jwToken) {
             navigate("/")
         } else {
-            setIsLoading(false)
+            setIsLoading(true)
         }
     }, [navigate])
 
@@ -57,7 +57,8 @@ function SearchCat() {
 
     return (
         <div style={{ color: "linear-gradient(135deg #0f2027, #203a43, #2c5364)",margin: "0 auto", alignContent:"center",maxWidth: "300px", height:"90%",  padding: "20px", border: "1px solid #ccc", borderRadius: "5px"}}>
-            <Form onSubmit={submitCheck}>
+            <div className= "BlockSignin"style={{alignContent:"center"}}>
+            <Form onSubmit={submitCheck}  style={{alignContent:"center", marginLeft:'25%'}}>
                 <div style={{ marginBottom: "15px" }}>
                     <Form.Label htmlFor="palavraChave">keyword..:</Form.Label>
                     <Form.Control id="palavraChave" value={palavraChave} onChange={(e) => setPalavraChave(e.target.value)} required style={{ width: "100%", padding: "8px", boxSizing: "border-box" }}/>
@@ -69,6 +70,7 @@ function SearchCat() {
             {/* Renderiza o componente Results se catData estiver disponível */}
             {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
             {rhymeList && <Resultados rhymeList={rhymeList} error={error} />}
+            </div>
         </div>
     )
 }

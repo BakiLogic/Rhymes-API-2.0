@@ -25,14 +25,15 @@ function Title() {
     }
 
   return (
-      <div className="mainbox" style={{ textAlign: "center", marginTop: "5%" }}>
-        <h1> Rhyme API </h1>
-        <ul style={{ listStyleType: "none", padding: 0 }}>
+      <div className="mainbox" style={{ alignContent:"center", width:"40%", marginLeft:"30%"}}>
+      
+        <h1 style={{padding: 0, alignContent:'center', marginLeft:'42%', marginTop:'-20%'}}> Rhyme API </h1>
+        <ul style={{ listStyleType: "none", padding: 0, alignContent:'center', marginLeft:'45%', marginTop:'15px'}}>
             <li style={{ marginBottom: "10px" }}>
-              <Button onClick={() => routeMenu(0)} style={{ padding: "10px 15px", backgroundColor: "#28A745", color: "#fff", border: "none", borderRadius: "5px", cursor: "pointer" }}>Add a Rhyme</Button>
+              <Button onClick={() => routeMenu(0)} style={{ padding: "10px 15px", backgroundColor: "red", color: "#fff", border: "none", borderRadius: "5px", cursor: "pointer" }}>Add a Rhyme</Button>
           </li>
           <li style={{ marginBottom: "10px" }}>
-            <Button onClick={() => routeMenu(1)} style={{ padding: "10px 15px", backgroundColor: "#17A2B8", color: "#fff", border: "none", borderRadius: "5px", cursor: "pointer" }}>Buscar gatos</Button>
+            <Button onClick={() => routeMenu(1)} style={{ padding: "10px 15px", backgroundColor: "blue", color: "#fff", border: "none", borderRadius: "5px", cursor: "pointer" }}>Buscar rimas</Button>
           </li>
         </ul>
       </div>

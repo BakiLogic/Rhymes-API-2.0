@@ -19,6 +19,7 @@ function SignIn() {
         } catch (e) {
             console.log(e)
             setErrorMessage("Input error.")
+           
         }
   };
 

@@ -1,13 +1,6 @@
 import axs from "axios"
 
 
-export const getJWToken = () => {
-
-    const jwtoken = localStorage.getItem('token')
-    return jwtoken || null
-    
-}
-
 export const loginToken = async (login, senha) => {
     try {
 
@@ -27,5 +20,11 @@ export const loginToken = async (login, senha) => {
         }
 
     }
+}
+export const getJWToken = () => {
+
+  const jwtoken = localStorage.getItem('token')
+  return jwtoken || null
+  
 }
 
