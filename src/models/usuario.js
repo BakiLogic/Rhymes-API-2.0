@@ -18,7 +18,7 @@ const Usuario = SqliteConnect.define('usuario', {
 
     },
 
-    idConta: {
+    id: {
         type: Sqlz.INTEGER,
         primaryKey: true,
         autoIncrement: true,

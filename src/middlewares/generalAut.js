@@ -8,10 +8,10 @@ export const getJWToken = () => {
     
 }
 
-export const loginToken = async (nome, senha) => {
+export const loginToken = async (login, senha) => {
     try {
 
-        const answ = await axs.post('https://localhost:3001/signin', {nome, senha})
+        const answ = await axs.post('https://localhost:3001/signin', {login, senha})
         const jwtoken = answ.data.token
 
         localStorage.setItem('token', jwtoken)

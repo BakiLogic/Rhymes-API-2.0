@@ -18,7 +18,7 @@ const Rhyme = SqliteConnect.define('rhyme', {
 
     },
 
-    idRima: {
+    id: {
         type: Sqlz.INTEGER,
         primaryKey: true,
         autoIncrement: true,

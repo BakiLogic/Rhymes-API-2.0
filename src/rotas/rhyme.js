@@ -17,7 +17,7 @@ router.post("/rhymeAdd", auToken, rhymeCheck, async (req, res) => {
         const rhymeAddTF = await rhymeOp.add(req.body)
 
         if (rhymeAddTF.tf) {
-            res.status(201).send({ status: true, Rhyme: rhymeAddTF })
+            res.status(201).send({ tf: true, Rhyme: rhymeAddTF })
         } else {
             res.status(200).send(rhymeAddTF)
         }

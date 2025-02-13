@@ -1,27 +1,28 @@
 const xpr = require('express')
 const fs = require('fs')
 const cors = require("cors")
-const app = express()
+const app = xpr()
+
 const crtfcd = fs.readFileSync("../certificados/cert.pem", "utf8")
 const pk = fs.readFileSync("../certificados/key.pem", "utf8")
 const credenciais = { key: pk, cert: crtfcd }
 const https = require('https')
-const sqliteBank = require('../dados/connect.js')
+const bd = require('../dados/connect')
 const servHttps = https.createServer(credenciais, app)
 const port = 3001
+app.use(cors())
 
-
-sqliteBank.aut().then(() => {
+bd.authenticate().then(() => {
     console.log("bd connected")
 }).catch(err => {
     console.log("Error", err)
 })
 
-app.use(cors())
+
 app.use(xpr.json())
-app.use('/', require('./routes/start'))
-app.use('/', require('./routes/signin'))
-app.use('/', require('./routes/rhyme'))
+app.use('/', require('./install'))
+app.use('/', require('./signin'))
+app.use('/', require('./rhyme'))
 app.get('/', (req, res) => {
     res.send('hello world')
 });
